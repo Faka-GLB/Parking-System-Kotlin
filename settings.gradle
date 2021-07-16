@@ -1,0 +1,2 @@
+rootProject.name = "Parking-System-Kotlin"
+include ':app'
