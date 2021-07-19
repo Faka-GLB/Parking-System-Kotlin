@@ -1,4 +1,4 @@
-package com.onboarding.parking_system_kotlin
+package com.onboarding.parkingsystemkotlin
 
 import org.junit.Test
 
