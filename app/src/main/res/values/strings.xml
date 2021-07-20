@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Parking-System-Kotlin</string>
+    <string name="app_name">EstacionAR</string>
+    <string name="main_activity_text_view_title">EstacionAR</string>
+    <string name="main_activity_button_set_parking">Establecer estacionamientos</string>
+    <string name="fragment_configure_parking_lots_title">Establecer estacionamientos</string>
+    <string name="fragment_btn_ok">OK</string>
+    <string name="fragment_btn_cancel">Cancelar</string>
+    <string name="fragment_configure_parking_lots_tv_hint">Ingrese cantidad de espacios…</string>
+    <string name="fragment_configure_parking_lots_toast_empty_input">Por favor ingrese un numero.</string>
+    <string name="fragment_configure_parking_lots_toast_confirm">Se establecieron %1$d estacionamientos</string>
 </resources>
