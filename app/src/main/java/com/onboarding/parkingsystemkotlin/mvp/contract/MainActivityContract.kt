@@ -5,6 +5,7 @@ interface MainActivityContract {
     interface MainActivityPresenter {
         fun onSetParkingButtonPressed()
         fun setParkingLots(lots: Int)
+        fun onNewReservationButtonPressed()
     }
 
     interface MainActivityModel {
@@ -14,5 +15,6 @@ interface MainActivityContract {
 
     interface MainActivityView {
         fun showConfigureParkingLotsDialogFragment()
+        fun showNewReservationActivity()
     }
 }
