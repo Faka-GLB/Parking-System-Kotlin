@@ -30,6 +30,12 @@ class ParkingPresenterTest {
         assertEquals(PARKING_LOT, model.getParkingLots())
     }
 
+    @Test
+    fun `new reservation` (){
+        presenter.onNewReservationButtonPressed()
+        verify(view).showNewReservationActivity()
+    }
+
     companion object {
         private const val PARKING_LOT: Int = 4
     }

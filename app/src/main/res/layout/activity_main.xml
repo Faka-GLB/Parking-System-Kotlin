@@ -21,4 +21,11 @@
         android:layout_marginTop="@dimen/main_activity_button_margin_xsmall"
         android:text="@string/main_activity_button_set_parking"
         app:layout_constraintTop_toBottomOf="@+id/tv_main_title" />
+
+    <Button
+        android:id="@+id/button_main_new_reservation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/button_main_set_parking_spaces"
+        android:text="@string/main_activity_btn_new_reservation" />
 </androidx.constraintlayout.widget.ConstraintLayout>

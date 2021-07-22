@@ -12,4 +12,8 @@ class ParkingPresenter(private val model: MainActivityContract.MainActivityModel
     override fun setParkingLots(lots: Int) {
         model.setParkingLots(lots)
     }
+
+    override fun onNewReservationButtonPressed() {
+        view.showNewReservationActivity()
+    }
 }

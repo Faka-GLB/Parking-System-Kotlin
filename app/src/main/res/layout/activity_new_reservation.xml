@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_new_reservation_activity_title"
+        style="@style/BaseTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_new_reservation_tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_new_reservation_activity_start_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
+        android:hint="@string/reservation_activity_tv_start_date_hint"
+        app:layout_constraintBottom_toBottomOf="@id/btn_new_reservation_activity_start_date"
+        app:layout_constraintEnd_toStartOf="@+id/btn_new_reservation_activity_start_date"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_new_reservation_activity_start_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
+        android:text="@string/reservation_activity_btn_start_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_new_reservation_activity_start_date"
+        app:layout_constraintTop_toBottomOf="@+id/tv_new_reservation_activity_title" />
+
+    <TextView
+        android:id="@+id/tv_new_reservation_activity_end_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
+        android:hint="@string/reservation_activity_tv_end_date_hint"
+        app:layout_constraintBottom_toBottomOf="@id/btn_new_reservation_activity_end_date"
+        app:layout_constraintEnd_toStartOf="@+id/btn_new_reservation_activity_end_date"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_new_reservation_activity_end_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
+        android:text="@string/reservation_activity_btn_end_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_new_reservation_activity_end_date"
+        app:layout_constraintTop_toBottomOf="@+id/btn_new_reservation_activity_start_date" />
+
+    <EditText
+        android:id="@+id/edit_text_new_reservation_activity_lot_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/new_reservation_activity_margin_size_small"
+        android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
+        android:hint="@string/reservation_activity_edit_text_lot_number_hint"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_new_reservation_activity_end_date" />
+
+    <EditText
+        android:id="@+id/edit_text_new_reservation_activity_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/new_reservation_activity_margin_size_small"
+        android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
+        android:hint="@string/reservation_activity_edit_text_password_hint"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_new_reservation_activity_lot_number" />
+
+    <Button
+        android:id="@+id/btn_new_reservation_activity_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/new_reservation_activity_margin_size_small"
+        android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
+        android:layout_marginBottom="@dimen/new_reservation_activity_margin_size_normal"
+        android:text="@string/fragment_btn_ok"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_new_reservation_activity_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
+        android:layout_marginEnd="@dimen/new_reservation_activity_margin_size_small"
+        android:layout_marginBottom="@dimen/new_reservation_activity_margin_size_normal"
+        android:text="@string/fragment_btn_cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
