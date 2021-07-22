@@ -2,6 +2,7 @@ package com.onboarding.parkingsystemkotlin.mvp.presenter
 
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
+import com.onboarding.parkingsystemkotlin.database.ParkingDatabase
 import com.onboarding.parkingsystemkotlin.mvp.contract.MainActivityContract
 import com.onboarding.parkingsystemkotlin.mvp.model.ParkingModel
 import org.junit.Assert.assertEquals
@@ -10,7 +11,7 @@ import org.junit.Test
 
 class ParkingPresenterTest {
     private lateinit var presenter: MainActivityContract.MainActivityPresenter
-    private var model: MainActivityContract.MainActivityModel = ParkingModel()
+    private var model: MainActivityContract.MainActivityModel = ParkingModel(database = ParkingDatabase)
     private val view: MainActivityContract.MainActivityView = mock()
 
     @Before
@@ -31,7 +32,7 @@ class ParkingPresenterTest {
     }
 
     @Test
-    fun `new reservation` (){
+    fun `new reservation`() {
         presenter.onNewReservationButtonPressed()
         verify(view).showNewReservationActivity()
     }

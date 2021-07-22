@@ -2,6 +2,7 @@ package com.onboarding.parkingsystemkotlin.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.onboarding.parkingsystemkotlin.database.ParkingDatabase
 import com.onboarding.parkingsystemkotlin.databinding.ActivityMainBinding
 import com.onboarding.parkingsystemkotlin.listener.OnInputListener
 import com.onboarding.parkingsystemkotlin.mvp.contract.MainActivityContract
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity(), OnInputListener {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        presenter = ParkingPresenter(model = ParkingModel(), view = ParkingView(this))
+        presenter = ParkingPresenter(model = ParkingModel(database = ParkingDatabase), view = ParkingView(this))
         setListeners()
     }
 
