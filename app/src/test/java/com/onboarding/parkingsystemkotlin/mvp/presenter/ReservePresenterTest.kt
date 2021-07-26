@@ -19,7 +19,6 @@ class ReservePresenterTest {
     private lateinit var model: ReserveActivityContract.ReserveModel
     private val view: ReserveActivityContract.ReserveView = mock()
 
-
     @Before
     fun setUp() {
         model = ReserveModel(database = ParkingDatabase, verifier = ReservationVerifier())

@@ -11,4 +11,5 @@ object ConstantUtils {
     const val MONTH_ADJUSTMENT: Int = 1
     const val EMPTY_STRING: String = ""
     const val DATE_TIME_PICKER_DIALOG_TAG: String = "DateTimePickerDialog"
+    const val ZERO: Int = 0
 }

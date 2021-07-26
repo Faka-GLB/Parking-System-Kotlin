@@ -6,5 +6,6 @@ import java.lang.ref.WeakReference
 open class ActivityView(activity: Activity) {
     private val activityRef: WeakReference<Activity> = WeakReference<Activity>(activity)
 
-    fun getActivity(): Activity? = activityRef.get()
+    val activity: Activity?
+        get() = activityRef.get()
 }

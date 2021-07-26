@@ -13,14 +13,14 @@ import com.onboarding.parkingsystemkotlin.utils.ConstantUtils
 class ReserveView(activity: Activity, private val binding: ActivityNewReservationBinding) : ActivityView(activity),
     ReserveActivityContract.ReserveView {
     override fun showDateTimePicker(isStartDate: Boolean) {
-        getActivity()?.let {
+        activity?.let {
             val dialog = DateTimePickerDialogFragment.newInstance(isStartDate)
             dialog.show((it as AppCompatActivity).supportFragmentManager, ConstantUtils.RESERVATION_ACTIVITY_TAG)
         }
     }
 
     override fun returnToMainActivity() {
-        getActivity()?.finish()
+        activity?.finish()
     }
 
     override fun setStartDateTextView(date: String) {
@@ -67,6 +67,6 @@ class ReserveView(activity: Activity, private val binding: ActivityNewReservatio
     }
 
     private fun showComprobationToast(messageId: Int) {
-        getActivity()?.let { Toast.makeText(it, it.getString(messageId), Toast.LENGTH_SHORT).show() }
+        activity?.let { Toast.makeText(it, it.getString(messageId), Toast.LENGTH_SHORT).show() }
     }
 }

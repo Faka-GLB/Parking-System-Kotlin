@@ -16,7 +16,7 @@
     <string name="reservation_activity_btn_end_date">Seleccionar fin</string>
     <string name="reservation_activity_tv_start_date_hint">Inicio de reserva</string>
     <string name="reservation_activity_tv_end_date_hint">Fin de reserva</string>
-    <string name="reservation_activity_edit_text_lot_number_hint">Ingrese su numero de estacionamiento</string>
+    <string name="reservation_activity_edit_text_lot_number_hint">Ingrese estacionamiento</string>
     <string name="reservation_activity_edit_text_password_hint">Ingrese su clave</string>
     <string name="reservation_view_reservation_saved_toast">Reserva guardada con éxito</string>
     <string name="reservation_view_missing_start_date_toast">Por favor seleccione el inicio de la reserva</string>
@@ -24,4 +24,7 @@
     <string name="reservation_view_missing_parking_lot_toast">Por favor ingrese el número de estacionamiento</string>
     <string name="reservation_view_missing_user_password_toast">Por favor ingrese su clave</string>
     <string name="reservation_view_reservation_overlap_toast">Error: ya hay una reserva en ese espacio y horario</string>
+    <string name="main_activity_btn_remove_old_reservations">Eliminar reservas antiguas</string>
+    <string name="main_activity_reservations_removed_toast">Se borraron las reservas antiguas.</string>
+    <string name="main_activity_no_reservations_removed_toast">No hay reservas antiguas para eliminar</string>
 </resources>

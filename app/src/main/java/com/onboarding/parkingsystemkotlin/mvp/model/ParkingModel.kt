@@ -10,4 +10,8 @@ class ParkingModel(private val database: ParkingDatabase) : MainActivityContract
     }
 
     override fun getParkingLots(): Int = database.getParkingLots()
+
+    override fun removeOldReservations(): Int {
+        return database.removeOldReservations()
+    }
 }
