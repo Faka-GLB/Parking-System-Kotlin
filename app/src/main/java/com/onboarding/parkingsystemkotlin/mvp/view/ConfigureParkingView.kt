@@ -16,25 +16,25 @@ class ConfigureParkingView(
     override fun getLots(): String = binding.editTextDialogFragmentParkingInput.text.toString()
 
     override fun closeDialog() {
-        (getFragment() as DialogFragment?)?.dismiss()
+        (fragment as DialogFragment?)?.dismiss()
     }
 
     override fun showEmptyInputToast() {
-        getContext()?.let {
+        context?.let {
             showToast(it.getString(R.string.fragment_configure_parking_lots_toast_empty_input))
         }
     }
 
     override fun onLotsNotEmpty(lots: Int, inputListener: OnInputListener) {
         inputListener.sendInput(lots)
-        getContext()?.let {
+        context?.let {
             showToast(it.getString(R.string.fragment_configure_parking_lots_toast_confirm, lots))
         }
         closeDialog()
     }
 
     private fun showToast(message: String) {
-        getContext()?.let {
+        context?.let {
             Toast.makeText(it, message, Toast.LENGTH_SHORT).show()
         }
     }

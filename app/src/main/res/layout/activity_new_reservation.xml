@@ -19,9 +19,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
+        android:layout_marginStart="@dimen/dialog_fragment_margin_size_small"
         android:hint="@string/reservation_activity_tv_start_date_hint"
         app:layout_constraintBottom_toBottomOf="@id/btn_new_reservation_activity_start_date"
-        app:layout_constraintEnd_toStartOf="@+id/btn_new_reservation_activity_start_date"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -39,9 +39,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
+        android:layout_marginStart="@dimen/new_reservation_activity_margin_size_small"
         android:hint="@string/reservation_activity_tv_end_date_hint"
         app:layout_constraintBottom_toBottomOf="@id/btn_new_reservation_activity_end_date"
-        app:layout_constraintEnd_toStartOf="@+id/btn_new_reservation_activity_end_date"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button

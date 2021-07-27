@@ -7,11 +7,9 @@ import java.lang.ref.WeakReference
 open class FragmentView(fragment: Fragment) {
     private val fragmentRef: WeakReference<Fragment> = WeakReference<Fragment>(fragment)
 
-    fun getFragment(): Fragment? {
-        return fragmentRef.get()
-    }
+    val fragment: Fragment?
+        get() = fragmentRef.get()
 
-    fun getContext(): Context? {
-        return getFragment()?.context
-    }
+    val context: Context?
+        get() = fragment?.context
 }

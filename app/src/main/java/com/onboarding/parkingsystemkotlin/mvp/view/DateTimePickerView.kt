@@ -13,7 +13,7 @@ class DateTimePickerView(dialogFragment: DialogFragment, private val binding: Da
     DateTimePickerContract.DateTimePickerView {
 
     override fun dismissDateTimePicker() {
-        (getFragment() as DialogFragment).dismiss()
+        (fragment as DialogFragment).dismiss()
     }
 
     override fun sendStartDateTime(listener: DateTimeListener) {

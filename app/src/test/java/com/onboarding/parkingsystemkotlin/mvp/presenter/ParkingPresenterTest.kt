@@ -34,10 +34,19 @@ class ParkingPresenterTest {
     @Test
     fun `new reservation`() {
         presenter.onNewReservationButtonPressed()
+        assertEquals(ZERO, model.removeOldReservations())
         verify(view).showNewReservationActivity()
+    }
+
+    @Test
+    fun `remove old reservations test`() {
+        presenter.onRemoveOldReservationsButtonPressed()
+        assertEquals(ZERO, model.removeOldReservations())
+        verify(view).showReservationsRemovedToast()
     }
 
     companion object {
         private const val PARKING_LOT: Int = 4
+        private const val ZERO: Int = 0
     }
 }

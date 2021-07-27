@@ -2,6 +2,7 @@ package com.onboarding.parkingsystemkotlin.database
 
 import com.onboarding.parkingsystemkotlin.entity.Reservation
 import com.onboarding.parkingsystemkotlin.utils.ConstantUtils
+import java.util.GregorianCalendar
 
 object ParkingDatabase {
     private val reservations: HashMap<Int, ArrayList<Reservation>> = HashMap()
@@ -22,7 +23,27 @@ object ParkingDatabase {
 
     fun getParkingLots() = parkingLots
 
-    fun setParkingLots(lots: Int){
+    fun setParkingLots(lots: Int) {
         parkingLots = lots
+    }
+
+    fun removeOldReservations(): Int {
+        val currentTime = GregorianCalendar()
+        var deleted: Int = ConstantUtils.ZERO
+        reservations.forEach { (lot) ->
+            run {
+                deleted += searchForOldReservation(currentTime, reservations[lot], lot)
+                if (reservations[lot].isNullOrEmpty()) {
+                    reservations.remove(lot)
+                }
+            }
+        }
+        return deleted
+    }
+
+    private fun searchForOldReservation(current: GregorianCalendar, reservations: ArrayList<Reservation>?, lot: Int): Int {
+        val reservationsAux: ArrayList<Reservation>? = reservations
+        this.reservations[lot] = reservationsAux?.filter { current.before(it.getEndDate()) } as java.util.ArrayList<Reservation>
+        return reservations.filter { current.after(it.getEndDate()) }.size
     }
 }
