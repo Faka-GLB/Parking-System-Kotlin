@@ -5,54 +5,54 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tv_new_reservation_activity_title"
+        android:id="@+id/text_view_new_reservation_activity_title"
         style="@style/BaseTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/activity_new_reservation_tv_title"
+        android:text="@string/activity_new_reservation_text_view_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_new_reservation_activity_start_date"
+        android:id="@+id/text_view_new_reservation_activity_start_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
         android:layout_marginStart="@dimen/dialog_fragment_margin_size_small"
-        android:hint="@string/reservation_activity_tv_start_date_hint"
-        app:layout_constraintBottom_toBottomOf="@id/btn_new_reservation_activity_start_date"
+        android:hint="@string/reservation_activity_text_view_start_date_hint"
+        app:layout_constraintBottom_toBottomOf="@id/button_new_reservation_activity_start_date"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_new_reservation_activity_start_date"
+        android:id="@+id/button_new_reservation_activity_start_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
-        android:text="@string/reservation_activity_btn_start_date"
+        android:text="@string/reservation_activity_button_start_date"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_new_reservation_activity_start_date"
-        app:layout_constraintTop_toBottomOf="@+id/tv_new_reservation_activity_title" />
+        app:layout_constraintStart_toEndOf="@id/text_view_new_reservation_activity_start_date"
+        app:layout_constraintTop_toBottomOf="@id/text_view_new_reservation_activity_title" />
 
     <TextView
-        android:id="@+id/tv_new_reservation_activity_end_date"
+        android:id="@+id/text_view_new_reservation_activity_end_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
         android:layout_marginStart="@dimen/new_reservation_activity_margin_size_small"
-        android:hint="@string/reservation_activity_tv_end_date_hint"
-        app:layout_constraintBottom_toBottomOf="@id/btn_new_reservation_activity_end_date"
+        android:hint="@string/reservation_activity_text_view_end_date_hint"
+        app:layout_constraintBottom_toBottomOf="@id/button_new_reservation_activity_end_date"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_new_reservation_activity_end_date"
+        android:id="@+id/button_new_reservation_activity_end_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
-        android:text="@string/reservation_activity_btn_end_date"
+        android:text="@string/reservation_activity_button_end_date"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_new_reservation_activity_end_date"
-        app:layout_constraintTop_toBottomOf="@+id/btn_new_reservation_activity_start_date" />
+        app:layout_constraintStart_toEndOf="@id/text_view_new_reservation_activity_end_date"
+        app:layout_constraintTop_toBottomOf="@id/button_new_reservation_activity_start_date" />
 
     <EditText
         android:id="@+id/edit_text_new_reservation_activity_lot_number"
@@ -64,7 +64,7 @@
         android:importantForAutofill="no"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_new_reservation_activity_end_date" />
+        app:layout_constraintTop_toBottomOf="@id/button_new_reservation_activity_end_date" />
 
     <EditText
         android:id="@+id/edit_text_new_reservation_activity_password"
@@ -79,24 +79,24 @@
         app:layout_constraintTop_toBottomOf="@id/edit_text_new_reservation_activity_lot_number" />
 
     <Button
-        android:id="@+id/btn_new_reservation_activity_ok"
+        android:id="@+id/button_new_reservation_activity_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/new_reservation_activity_margin_size_small"
         android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
         android:layout_marginBottom="@dimen/new_reservation_activity_margin_size_normal"
-        android:text="@string/fragment_btn_ok"
+        android:text="@string/button_ok"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_new_reservation_activity_cancel"
+        android:id="@+id/button_new_reservation_activity_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/new_reservation_activity_margin_size_normal"
         android:layout_marginEnd="@dimen/new_reservation_activity_margin_size_small"
         android:layout_marginBottom="@dimen/new_reservation_activity_margin_size_normal"
-        android:text="@string/fragment_btn_cancel"
+        android:text="@string/button_cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

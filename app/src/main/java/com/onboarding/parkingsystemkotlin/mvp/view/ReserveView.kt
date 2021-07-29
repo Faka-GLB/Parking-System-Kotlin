@@ -24,14 +24,14 @@ class ReserveView(activity: Activity, private val binding: ActivityNewReservatio
     }
 
     override fun setStartDateTextView(date: String) {
-        binding.tvNewReservationActivityStartDate.text = date
+        binding.textViewNewReservationActivityStartDate.text = date
     }
 
     override fun setEndDateTextView(date: String) {
-        binding.tvNewReservationActivityEndDate.text = date
+        binding.textViewNewReservationActivityEndDate.text = date
     }
 
-    override fun getParkingLot(): Int  {
+    override fun getParkingLot(): Int {
         val lot: String = binding.editTextNewReservationActivityLotNumber.text.toString()
         return if (lot.isEmpty()) {
             ConstantUtils.PARKING_LOT_NOT_SET
@@ -64,6 +64,14 @@ class ReserveView(activity: Activity, private val binding: ActivityNewReservatio
 
     override fun showReserveSavedToast() {
         showComprobationToast(R.string.reservation_view_reservation_saved_toast)
+    }
+
+    override fun showLotNotValidToast() {
+        showComprobationToast(R.string.reservation_view_lot_not_valid_toast)
+    }
+
+    override fun showReservationBackwardsToast() {
+        showComprobationToast(R.string.reservation_view_reservation_backwards_toast)
     }
 
     private fun showComprobationToast(messageId: Int) {

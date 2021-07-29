@@ -7,6 +7,7 @@ interface MainActivityContract {
         fun setParkingLots(lots: Int)
         fun onNewReservationButtonPressed()
         fun onRemoveOldReservationsButtonPressed()
+        fun onShowReservationsButtonPressed()
     }
 
     interface MainActivityModel {
@@ -19,5 +20,6 @@ interface MainActivityContract {
         fun showConfigureParkingLotsDialogFragment()
         fun showNewReservationActivity()
         fun showReservationsRemovedToast()
+        fun showReservations()
     }
 }

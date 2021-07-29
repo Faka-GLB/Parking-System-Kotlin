@@ -9,10 +9,14 @@ class ReservationVerifier(private val database: ParkingDatabase = ParkingDatabas
         if (reservation.getStartDate() == null) return ReserveComprobation.MISSING_START
         if (reservation.getEndDate() == null) return ReserveComprobation.MISSING_END
         if (reservation.getParkingLot() == ConstantUtils.PARKING_LOT_NOT_SET) return ReserveComprobation.MISSING_LOT
+        if (reservation.getParkingLot() > ParkingDatabase.getParkingLots()) return ReserveComprobation.LOT_NOT_VALID
         if (reservation.getUserPassword().isEmpty()) return ReserveComprobation.MISSING_PASSWORD
-        if (!isReservationOk(reservation)) return ReserveComprobation.RESERVATION_OVERLAP
+        if (isReservationBackwards(reservation)) return ReserveComprobation.RESERVATION_BACKWARDS
+        if (isReservationOk(reservation).not()) return ReserveComprobation.RESERVATION_OVERLAP
         return ReserveComprobation.COMPROBATION_OK
     }
+
+    private fun isReservationBackwards(reservation: Reservation) = reservation.getEndDate()?.before(reservation.getStartDate()) == true
 
     private fun isReservationOk(reserve: Reservation): Boolean {
         val lot = reserve.getParkingLot()

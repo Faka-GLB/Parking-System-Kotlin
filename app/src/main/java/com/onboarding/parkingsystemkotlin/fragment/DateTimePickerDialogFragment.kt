@@ -43,8 +43,8 @@ class DateTimePickerDialogFragment : DialogFragment() {
     }
 
     private fun setListeners() {
-        binding.btnReservationFragmentOk.setOnClickListener { this.presenter.onOkButtonPress(dateTimeListener) }
-        binding.btnReservationFragmentCancel.setOnClickListener { this.presenter.onCancelButtonPress() }
+        binding.buttonReservationFragmentOk.setOnClickListener { this.presenter.onOkButtonPress(dateTimeListener) }
+        binding.buttonReservationFragmentCancel.setOnClickListener { this.presenter.onCancelButtonPress() }
     }
 
     companion object {

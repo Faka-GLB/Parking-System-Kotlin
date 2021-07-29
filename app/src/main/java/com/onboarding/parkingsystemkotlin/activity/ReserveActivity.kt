@@ -30,10 +30,10 @@ class ReserveActivity : AppCompatActivity(), DateTimeListener {
     }
 
     private fun setListeners() {
-        binding.btnNewReservationActivityStartDate.setOnClickListener { this.presenter.onStartDateButtonPress() }
-        binding.btnNewReservationActivityEndDate.setOnClickListener { this.presenter.onEndDateButtonPress() }
-        binding.btnNewReservationActivityOk.setOnClickListener { this.presenter.onOkButtonPress() }
-        binding.btnNewReservationActivityCancel.setOnClickListener { this.presenter.onCancelButtonPress() }
+        binding.buttonNewReservationActivityStartDate.setOnClickListener { this.presenter.onStartDateButtonPress() }
+        binding.buttonNewReservationActivityEndDate.setOnClickListener { this.presenter.onEndDateButtonPress() }
+        binding.buttonNewReservationActivityOk.setOnClickListener { this.presenter.onOkButtonPress() }
+        binding.buttonNewReservationActivityCancel.setOnClickListener { this.presenter.onCancelButtonPress() }
     }
 
     companion object {
