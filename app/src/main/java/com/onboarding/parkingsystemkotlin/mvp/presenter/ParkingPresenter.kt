@@ -22,4 +22,8 @@ class ParkingPresenter(private val model: MainActivityContract.MainActivityModel
         model.removeOldReservations()
         view.showReservationsRemovedToast()
     }
+
+    override fun onShowReservationsButtonPressed() {
+        view.showReservations()
+    }
 }

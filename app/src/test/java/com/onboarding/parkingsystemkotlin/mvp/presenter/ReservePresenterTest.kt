@@ -7,12 +7,14 @@ import com.onboarding.parkingsystemkotlin.database.ParkingDatabase
 import com.onboarding.parkingsystemkotlin.entity.Reservation
 import com.onboarding.parkingsystemkotlin.mvp.contract.ReserveActivityContract
 import com.onboarding.parkingsystemkotlin.mvp.model.ReserveModel
-import com.onboarding.parkingsystemkotlin.utils.ConstantUtils
 import com.onboarding.parkingsystemkotlin.utils.ReservationVerifier
+import com.onboarding.parkingsystemkotlin.utils.CalendarUtils
+import com.onboarding.parkingsystemkotlin.utils.CalendarUtils.getDateString
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
-import java.util.*
+import java.util.Calendar
+import java.util.GregorianCalendar
 
 class ReservePresenterTest {
     private lateinit var presenter: ReserveActivityContract.ReservePresenter
@@ -43,6 +45,7 @@ class ReservePresenterTest {
 
     @Test
     fun `on ok button press - empty start date`() {
+        ParkingDatabase.setParkingLots(PARKING_LOT)
         whenever(view.getParkingLot()).thenReturn(PARKING_LOT)
         whenever(view.getUserPassword()).thenReturn(USER_PASSWORD)
         presenter.onOkButtonPress()
@@ -51,6 +54,7 @@ class ReservePresenterTest {
 
     @Test
     fun `on ok button press - empty end date`() {
+        ParkingDatabase.setParkingLots(PARKING_LOT)
         whenever(view.getParkingLot()).thenReturn(PARKING_LOT)
         whenever(view.getUserPassword()).thenReturn(USER_PASSWORD)
         presenter.setReservationStartDate(getStartDateCalendar())
@@ -61,6 +65,7 @@ class ReservePresenterTest {
 
     @Test
     fun `on ok button press - empty parking lot`() {
+        ParkingDatabase.setParkingLots(PARKING_LOT)
         whenever(view.getParkingLot()).thenReturn(LOT_NOT_SET)
         whenever(view.getUserPassword()).thenReturn(USER_PASSWORD)
         presenter.setReservationStartDate(getStartDateCalendar())
@@ -72,6 +77,7 @@ class ReservePresenterTest {
 
     @Test
     fun `on ok button press - empty password`() {
+        ParkingDatabase.setParkingLots(PARKING_LOT)
         whenever(view.getParkingLot()).thenReturn(PARKING_LOT)
         whenever(view.getUserPassword()).thenReturn(EMPTY_STRING_PASSWORD)
         presenter.setReservationStartDate(getStartDateCalendar())
@@ -81,7 +87,30 @@ class ReservePresenterTest {
     }
 
     @Test
+    fun `on ok button press - lot not valid`() {
+        ParkingDatabase.setParkingLots(PARKING_LOT)
+        whenever(view.getParkingLot()).thenReturn(INVALID_LOT)
+        whenever(view.getUserPassword()).thenReturn(EMPTY_STRING_PASSWORD)
+        presenter.setReservationStartDate(getStartDateCalendar())
+        presenter.setReservationEndDate(getEndDateCalendar())
+        presenter.onOkButtonPress()
+        verify(view).showLotNotValidToast()
+    }
+
+    @Test
+    fun `on ok button press - reservation backwards`() {
+        ParkingDatabase.setParkingLots(PARKING_LOT)
+        whenever(view.getParkingLot()).thenReturn(PARKING_LOT)
+        whenever(view.getUserPassword()).thenReturn(USER_PASSWORD)
+        presenter.setReservationStartDate(getEndDateCalendar())
+        presenter.setReservationEndDate(getStartDateCalendar())
+        presenter.onOkButtonPress()
+        verify(view).showReservationBackwardsToast()
+    }
+
+    @Test
     fun `on ok button press - comprobation ok`() {
+        ParkingDatabase.setParkingLots(PARKING_LOT)
         whenever(view.getParkingLot()).thenReturn(PARKING_LOT)
         whenever(view.getUserPassword()).thenReturn(USER_PASSWORD)
         presenter.setReservationStartDate(getStartDateCalendar())
@@ -97,6 +126,7 @@ class ReservePresenterTest {
     }
 
     private fun getOverlapReservation(): Reservation {
+        ParkingDatabase.setParkingLots(PARKING_LOT)
         val reservation = Reservation()
         reservation.setStartDate(getStartDateCalendar())
         val endDate = getEndDateCalendar()
@@ -109,6 +139,7 @@ class ReservePresenterTest {
 
     @Test
     fun `on ok button press - reservation overlap`() {
+        ParkingDatabase.setParkingLots(PARKING_LOT)
         model.addReservation(getOverlapReservation())
         whenever(view.getParkingLot()).thenReturn(PARKING_LOT)
         whenever(view.getUserPassword()).thenReturn(USER_PASSWORD)
@@ -136,30 +167,18 @@ class ReservePresenterTest {
         verify(view).returnToMainActivity()
     }
 
-    private fun getDateString(date: Calendar?): String {
-        var ret = ConstantUtils.EMPTY_STRING
-        if (date != null) {
-            ret = (date.get(Calendar.DAY_OF_MONTH).toString() + ConstantUtils.SLASH +
-                    (date.get(Calendar.MONTH) + ConstantUtils.MONTH_ADJUSTMENT) + ConstantUtils.SLASH +
-                    date.get(Calendar.YEAR) + ConstantUtils.SPACE +
-                    date.get(Calendar.HOUR) + ConstantUtils.COLON +
-                    date.get(Calendar.MINUTE))
-        }
-        return ret
-    }
-
     @Test
     fun `set reservation start date test`() {
         presenter.setReservationStartDate(getStartDateCalendar())
         assertEquals(getStartDateCalendar(), model.getReservation().getStartDate())
-        verify(view).setStartDateTextView(getDateString(getStartDateCalendar()))
+        verify(view).setStartDateTextView(getStartDateCalendar().getDateString())
     }
 
     @Test
     fun `set reservation end date test`() {
         presenter.setReservationEndDate(getEndDateCalendar())
         assertEquals(getEndDateCalendar(), model.getReservation().getEndDate())
-        verify(view).setEndDateTextView(getDateString(getEndDateCalendar()))
+        verify(view).setEndDateTextView(getEndDateCalendar().getDateString())
     }
 
     companion object {
@@ -172,6 +191,7 @@ class ReservePresenterTest {
         private const val MINUTE: Int = 16
         private const val ZERO: Int = 0
         private const val PARKING_LOT: Int = 4
+        private const val INVALID_LOT: Int = 5
         private const val LOT_NOT_SET: Int = -1
         private const val USER_PASSWORD: String = "password"
         private const val EMPTY_STRING_PASSWORD: String = ""

@@ -12,4 +12,6 @@ object ConstantUtils {
     const val EMPTY_STRING: String = ""
     const val DATE_TIME_PICKER_DIALOG_TAG: String = "DateTimePickerDialog"
     const val ZERO: Int = 0
+    const val AM: String = "am"
+    const val PM: String = "pm"
 }

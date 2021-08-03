@@ -27,6 +27,8 @@ interface ReserveActivityContract {
         fun showMissingUserPasswordToast()
         fun showReservationOverlapToast()
         fun showReserveSavedToast()
+        fun showLotNotValidToast()
+        fun showReservationBackwardsToast()
     }
 
     interface ReserveModel {

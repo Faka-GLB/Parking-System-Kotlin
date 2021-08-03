@@ -7,7 +7,7 @@
     tools:context=".activity.MainActivity">
 
     <TextView
-        android:id="@+id/tv_main_title"
+        android:id="@+id/text_view_main_title"
         style="@style/BaseTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,19 +20,26 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/main_activity_button_margin_xsmall"
         android:text="@string/main_activity_button_set_parking"
-        app:layout_constraintTop_toBottomOf="@+id/tv_main_title" />
+        app:layout_constraintTop_toBottomOf="@id/text_view_main_title" />
 
     <Button
         android:id="@+id/button_main_new_reservation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/button_main_set_parking_spaces"
-        android:text="@string/main_activity_btn_new_reservation" />
+        android:text="@string/main_activity_button_new_reservation"
+        app:layout_constraintTop_toBottomOf="@id/button_main_set_parking_spaces" />
 
     <Button
         android:id="@+id/button_main_remove_old_reservations"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/button_main_new_reservation"
-        android:text="@string/main_activity_btn_remove_old_reservations" />
+        android:text="@string/main_activity_button_remove_old_reservations"
+        app:layout_constraintTop_toBottomOf="@id/button_main_new_reservation" />
+
+    <Button
+        android:id="@+id/button_main_show_reservations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/main_activity_button_show_reservations"
+        app:layout_constraintTop_toBottomOf="@id/button_main_remove_old_reservations" />
 </androidx.constraintlayout.widget.ConstraintLayout>

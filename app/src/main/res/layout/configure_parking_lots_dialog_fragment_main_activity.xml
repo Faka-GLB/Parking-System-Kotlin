@@ -8,7 +8,7 @@
     tools:context=".activity.MainActivity">
 
     <TextView
-        android:id="@+id/text_set_parking_dialog_fragment_title"
+        android:id="@+id/text_view_set_parking_dialog_fragment_title"
         style="@style/BaseTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,25 +24,25 @@
         android:importantForAutofill="no"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_set_parking_dialog_fragment_title" />
+        app:layout_constraintTop_toBottomOf="@id/text_view_set_parking_dialog_fragment_title" />
 
     <Button
-        android:id="@+id/btn_dialog_fragment_ok"
+        android:id="@+id/button_dialog_fragment_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dialog_fragment_margin_size_small"
         android:layout_marginTop="@dimen/dialog_fragment_margin_size_small"
-        android:text="@string/fragment_btn_ok"
+        android:text="@string/button_ok"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_dialog_fragment_parking_input" />
+        app:layout_constraintTop_toBottomOf="@id/edit_text_dialog_fragment_parking_input" />
 
     <Button
-        android:id="@+id/btn_dialog_fragment_cancel"
+        android:id="@+id/button_dialog_fragment_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dialog_fragment_margin_size_small"
         android:layout_marginEnd="@dimen/dialog_fragment_margin_size_small"
-        android:text="@string/fragment_btn_cancel"
+        android:text="@string/button_cancel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_dialog_fragment_parking_input" />
+        app:layout_constraintTop_toBottomOf="@id/edit_text_dialog_fragment_parking_input" />
 </androidx.constraintlayout.widget.ConstraintLayout>

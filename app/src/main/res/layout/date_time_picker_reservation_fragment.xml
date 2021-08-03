@@ -15,11 +15,11 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/tv_reservation_date_picker_hint"
+                android:id="@+id/text_view_reservation_date_picker_hint"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/fragment_reservation_tv_date_picker_hint"
+                android:text="@string/fragment_reservation_text_view_date_picker_hint"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -33,17 +33,17 @@
                 android:headerBackground="@color/purple_700"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tv_reservation_date_picker_hint" />
+                app:layout_constraintTop_toTopOf="@id/text_view_reservation_date_picker_hint" />
 
             <TextView
-                android:id="@+id/tv_reservation_time_picker_hint"
+                android:id="@+id/text_view_reservation_time_picker_hint"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/fragment_reservation_tv_time_picker_hint"
+                android:text="@string/fragment_reservation_text_view_time_picker_hint"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/date_piker_reservation_fragment" />
+                app:layout_constraintTop_toBottomOf="@id/date_piker_reservation_fragment" />
 
             <TimePicker
                 android:id="@+id/time_picker_reservation_fragment"
@@ -55,26 +55,26 @@
                 android:timePickerMode="spinner"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_reservation_time_picker_hint" />
+                app:layout_constraintTop_toBottomOf="@id/text_view_reservation_time_picker_hint" />
 
             <Button
-                android:id="@+id/btn_reservation_fragment_ok"
+                android:id="@+id/button_reservation_fragment_ok"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dialog_fragment_margin_size_small"
                 android:layout_marginTop="@dimen/dialog_fragment_margin_size_small"
-                android:text="@string/fragment_btn_ok"
+                android:text="@string/button_ok"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/time_picker_reservation_fragment" />
 
             <Button
-                android:id="@+id/btn_reservation_fragment_cancel"
+                android:id="@+id/button_reservation_fragment_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dialog_fragment_margin_size_small"
                 android:layout_marginEnd="@dimen/dialog_fragment_margin_size_small"
-                android:text="@string/fragment_btn_cancel"
+                android:text="@string/button_cancel"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/time_picker_reservation_fragment" />

@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.onboarding.parkingsystemkotlin.R
 import com.onboarding.parkingsystemkotlin.activity.ReserveActivity
+import com.onboarding.parkingsystemkotlin.activity.ShowReservationsActivity
 import com.onboarding.parkingsystemkotlin.fragment.ConfigureParkingLotsDialogFragment
 import com.onboarding.parkingsystemkotlin.mvp.contract.MainActivityContract
 import com.onboarding.parkingsystemkotlin.mvp.view.base.ActivityView
@@ -27,6 +28,12 @@ class ParkingView(activity: Activity) : ActivityView(activity = activity), MainA
     override fun showReservationsRemovedToast() {
         activity?.let {
             Toast.makeText(it, it.getString(R.string.main_activity_reservations_removed_toast), Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun showReservations() {
+        activity?.let {
+            it.startActivity(ShowReservationsActivity.getIntent(it))
         }
     }
 }

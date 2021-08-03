@@ -1,5 +1,6 @@
 package com.onboarding.parkingsystemkotlin.entity
 
+import com.onboarding.parkingsystemkotlin.utils.CalendarUtils.getDateString
 import com.onboarding.parkingsystemkotlin.utils.ConstantUtils
 import java.util.Calendar
 
@@ -32,4 +33,8 @@ class Reservation() {
     fun setUserPassword(userPassword: String) {
         this.userPassword = userPassword
     }
+
+    fun getStartDateString() = startDate?.getDateString() ?: ConstantUtils.EMPTY_STRING
+
+    fun getEndDateString() = endDate?.getDateString() ?: ConstantUtils.EMPTY_STRING
 }

@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity(), OnInputListener {
         binding.buttonMainSetParkingSpaces.setOnClickListener { presenter.onSetParkingButtonPressed() }
         binding.buttonMainNewReservation.setOnClickListener { presenter.onNewReservationButtonPressed() }
         binding.buttonMainRemoveOldReservations.setOnClickListener { presenter.onRemoveOldReservationsButtonPressed() }
+        binding.buttonMainShowReservations.setOnClickListener { presenter.onShowReservationsButtonPressed() }
     }
 
     override fun sendInput(input: Int) {

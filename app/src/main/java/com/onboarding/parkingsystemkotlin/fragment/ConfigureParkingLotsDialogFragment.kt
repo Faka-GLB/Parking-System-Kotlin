@@ -27,8 +27,8 @@ class ConfigureParkingLotsDialogFragment : DialogFragment() {
     }
 
     private fun setListeners() {
-        binding.btnDialogFragmentOk.setOnClickListener { presenter.onOkButtonPress() }
-        binding.btnDialogFragmentCancel.setOnClickListener { presenter.onCancelButtonPress() }
+        binding.buttonDialogFragmentOk.setOnClickListener { presenter.onOkButtonPress() }
+        binding.buttonDialogFragmentCancel.setOnClickListener { presenter.onCancelButtonPress() }
     }
 
     override fun onAttach(context: Context) {
