@@ -7,9 +7,8 @@ import com.onboarding.parkingsystemkotlin.database.ParkingDatabase
 import com.onboarding.parkingsystemkotlin.entity.Reservation
 import com.onboarding.parkingsystemkotlin.mvp.contract.ReserveActivityContract
 import com.onboarding.parkingsystemkotlin.mvp.model.ReserveModel
-import com.onboarding.parkingsystemkotlin.utils.ReservationVerifier
-import com.onboarding.parkingsystemkotlin.utils.CalendarUtils
 import com.onboarding.parkingsystemkotlin.utils.CalendarUtils.getDateString
+import com.onboarding.parkingsystemkotlin.utils.ReservationVerifier
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
